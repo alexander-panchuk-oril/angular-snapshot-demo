@@ -1,0 +1,118 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AppComponent [snapshot] should sort agents by name 1`] = `
+Array [
+  Object {
+    "agency": "The Agency",
+    "codeName": "Dizzy Rider",
+  },
+  Object {
+    "agency": "DXS",
+    "codeName": "Sidewinter",
+  },
+  Object {
+    "agency": "Section 31",
+    "codeName": "Soft Hummer",
+  },
+  Object {
+    "agency": "Alpha Protocol",
+    "codeName": "Velvet Thunder",
+  },
+  Object {
+    "agency": "F.I.R.M.",
+    "codeName": "Wet Blanket",
+  },
+]
+`;
+
+exports[`AppComponent should renders markup to snapshot 1`] = `
+<app-root
+  agents={[Function Array]}
+>
+  <section>
+    <div
+      class="container"
+    >
+      <h1>
+        Secret Agents
+      </h1>
+      <button
+        class="secondary"
+      >
+        Sort By Name
+      </button>
+      
+      <app-agent>
+        <div
+          class="card"
+        >
+          <h4>
+            Velvet Thunder
+          </h4>
+          <button
+            class="primary"
+          >
+            Hire
+          </button>
+        </div>
+      </app-agent>
+      <app-agent>
+        <div
+          class="card"
+        >
+          <h4>
+            Wet Blanket
+          </h4>
+          <button
+            class="primary"
+          >
+            Hire
+          </button>
+        </div>
+      </app-agent>
+      <app-agent>
+        <div
+          class="card"
+        >
+          <h4>
+            Soft Hummer
+          </h4>
+          <button
+            class="primary"
+          >
+            Hire
+          </button>
+        </div>
+      </app-agent>
+      <app-agent>
+        <div
+          class="card"
+        >
+          <h4>
+            Sidewinter
+          </h4>
+          <button
+            class="primary"
+          >
+            Hire
+          </button>
+        </div>
+      </app-agent>
+      <app-agent>
+        <div
+          class="card"
+        >
+          <h4>
+            Dizzy Rider
+          </h4>
+          <button
+            class="primary"
+          >
+            Hire
+          </button>
+        </div>
+      </app-agent>
+    </div>
+  </section>
+</app-root>
+`;

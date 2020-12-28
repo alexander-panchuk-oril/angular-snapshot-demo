@@ -1,0 +1,7 @@
+<section>
+    <div class="container">
+        <h1>Secret Agents</h1>
+        <button class="secondary" (click)="sortByName()">Sort By Name</button>
+        <app-agent *ngFor="let agent of agents" [agent]="agent"></app-agent>
+    </div>
+</section>

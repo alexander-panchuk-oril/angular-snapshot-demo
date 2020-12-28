@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AgentComponent [snapshot] should renders markup to snapshot 1`] = `
+<app-agent
+  agent={[Function Object]}
+>
+  <div
+    class="card"
+  >
+    <h4>
+      Velvet Thunder
+    </h4>
+    <button
+      class="primary"
+    >
+      Hire
+    </button>
+  </div>
+</app-agent>
+`;
