@@ -2,6 +2,7 @@ import { TestBed, async, ComponentFixture } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
 import { AgentComponent } from './agent/agent.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 describe('AppComponent', () => {
   let component: AppComponent;
@@ -10,7 +11,8 @@ describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
-        RouterTestingModule
+        RouterTestingModule,
+        FontAwesomeModule
       ],
       declarations: [
         AppComponent,
@@ -23,10 +25,6 @@ describe('AppComponent', () => {
     fixture = TestBed.createComponent(AppComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
-  });
-
-  it('should renders markup to snapshot', () => {
-    expect(fixture).toMatchSnapshot();
   });
 
   it('should sort agents by name', () => {
@@ -54,7 +52,7 @@ describe('AppComponent', () => {
       }
     ]);
   });
-// to test
+
   it('[snapshot] should sort agents by name', () => {
     const sortedAgents = component.sortByName();
     expect(sortedAgents).toMatchSnapshot();

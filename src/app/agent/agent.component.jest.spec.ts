@@ -18,31 +18,63 @@ describe('AgentComponent', () => {
     component = fixture.componentInstance;
   });
 
-  it('should renader h4 ', () => {
+  it('should render h4 before button if LTR layout', () => {
     const agent =  {
       codeName: 'Velvet Thunder',
       agency: 'Alpha Protocol'
     };
     component.agent = agent;
+    component.layout = 'ltr';
     fixture.detectChanges();
 
     const h4 = fixture.debugElement.nativeElement.querySelector('h4');
-    expect(h4.innerHTML).toEqual('Velvet Thunder');
+    const button = fixture.debugElement.nativeElement.querySelector('button');
+    expect(h4.nextElementSibling).toEqual(button);
   });
 
-  it('should render button ', () => {
+  it('should render button after h4 if LTR layout', () => {
     const agent =  {
       codeName: 'Velvet Thunder',
       agency: 'Alpha Protocol'
     };
     component.agent = agent;
+    component.layout = 'ltr';
     fixture.detectChanges();
 
+    const h4 = fixture.debugElement.nativeElement.querySelector('h4');
     const button = fixture.debugElement.nativeElement.querySelector('button');
-    expect(button.innerHTML).toEqual('Hire');
+    expect(button.previousElementSibling).toEqual(h4);
   });
 
-  it('should render h4 before button', () => {
+  it('should render h4 after button if RTL layout', () => {
+    const agent =  {
+      codeName: 'Velvet Thunder',
+      agency: 'Alpha Protocol'
+    };
+    component.agent = agent;
+    component.layout = 'rtl';
+    fixture.detectChanges();
+
+    const h4 = fixture.debugElement.nativeElement.querySelector('h4');
+    const button = fixture.debugElement.nativeElement.querySelector('button');
+    expect(h4.previousElementSibling).toEqual(button);
+  });
+
+  it('should render button before h4 if RTL layout', () => {
+    const agent =  {
+      codeName: 'Velvet Thunder',
+      agency: 'Alpha Protocol'
+    };
+    component.agent = agent;
+    component.layout = 'rtl';
+    fixture.detectChanges();
+
+    const h4 = fixture.debugElement.nativeElement.querySelector('h4');
+    const button = fixture.debugElement.nativeElement.querySelector('button');
+    expect(button.nextElementSibling).toEqual(h4);
+  });
+
+  it('should render h4 before button if no layout mode', () => {
     const agent =  {
       codeName: 'Velvet Thunder',
       agency: 'Alpha Protocol'
@@ -55,7 +87,7 @@ describe('AgentComponent', () => {
     expect(h4.nextElementSibling).toEqual(button);
   });
 
-  it('should render button after h4', () => {
+  it('should render button after h4 if no layout mode', () => {
     const agent =  {
       codeName: 'Velvet Thunder',
       agency: 'Alpha Protocol'
@@ -68,7 +100,31 @@ describe('AgentComponent', () => {
     expect(button.previousElementSibling).toEqual(h4);
   });
 
-  it('[snapshot] should renders markup to snapshot', () => {
+  it('[snapshot] should render LTR layout', () => {
+    const agent =  {
+      codeName: 'Velvet Thunder',
+      agency: 'Alpha Protocol'
+    };
+    component.agent = agent;
+    component.layout = 'ltr';
+    fixture.detectChanges();
+
+    expect(fixture).toMatchSnapshot();
+  });
+
+  it('[snapshot] should render RTL layout', () => {
+    const agent =  {
+      codeName: 'Velvet Thunder',
+      agency: 'Alpha Protocol'
+    };
+    component.agent = agent;
+    component.layout = 'rtl';
+    fixture.detectChanges();
+
+    expect(fixture).toMatchSnapshot();
+  });
+
+  it('[snapshot] should render no layout mode', () => {
     const agent =  {
       codeName: 'Velvet Thunder',
       agency: 'Alpha Protocol'

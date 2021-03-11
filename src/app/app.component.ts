@@ -7,6 +7,7 @@ import { ISecretAgent } from './shared/interfaces/ISecretAgent.interface';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
+  public layout: 'rtl' | 'ltr' = 'ltr';
   public agents: ISecretAgent[] = [
     {
       codeName: 'Velvet Thunder',
@@ -31,6 +32,10 @@ export class AppComponent implements OnInit {
   ];
 
   ngOnInit() {
+  }
+
+  public swapLayout() {
+    this.layout = this.layout === 'rtl' ? 'ltr' : 'rtl';
   }
 
   public sortByName(): ISecretAgent[] {

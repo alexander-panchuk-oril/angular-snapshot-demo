@@ -9,6 +9,9 @@ import { ISecretAgent } from '../shared/interfaces/ISecretAgent.interface';
 export class AgentComponent implements OnInit {
 
   @Input()
+  public layout: 'ltr' | 'rtl';
+
+  @Input()
   public agent: ISecretAgent;
 
   constructor() { }

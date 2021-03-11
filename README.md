@@ -1,4 +1,4 @@
-# 🤵🤵‍♀️ Secret Agents - 📸 Snapshot testing
+# 🤵🤵‍ Secret Agents - 📸 Snapshot testing
 
 Demo project for snapshot testing based on [Angular](https://angular.io/) and [Jest](https://jestjs.io/). 
 

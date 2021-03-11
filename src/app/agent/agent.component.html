@@ -1,4 +1,11 @@
 <div class="card">
-    <h4>{{ agent.codeName }}</h4>
-    <button class="primary">Hire</button>
+    <ng-container *ngIf="layout === 'rtl'; then btn else title"></ng-container>
+    <ng-container *ngIf="layout === 'rtl'; then title else btn"></ng-container>
 </div>
+
+<ng-template #title>
+    <h4 >{{ agent.codeName }}</h4>
+</ng-template>
+<ng-template #btn>
+    <button class="primary">Hire</button>
+</ng-template>
