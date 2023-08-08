@@ -59,7 +59,7 @@ import 'jest-preset-angular';
 ```typescript
 import '@types/jest';
 ```
-6. In your `panchage.json` add custom scripts in `"scripts"` object:
+6. In your `package.json` add custom scripts in `"scripts"` object:
 ```json
 "test:jest" : "jest --watch",
 "test:jest--c": "jest --coverage",
