@@ -10,36 +10,26 @@ export class AppComponent implements OnInit {
   public layout: 'rtl' | 'ltr' = 'ltr';
   public agents: ISecretAgent[] = [
     {
-      codeName: 'Velvet Thunder',
-      agency: 'Alpha Protocol'
+      codeName: 'Velvet Thunder'
     },
     {
-      codeName: 'Wet Blanket',
-      agency: 'F.I.R.M.'
+      codeName: 'Wet Blanket'
     },
     {
-      codeName: 'Soft Hummer',
-      agency: 'Section 31'
+      codeName: 'Soft Hummer'
     },
     {
-      codeName: 'Sidewinter',
-      agency: 'DXS'
-    },
-    {
-      codeName: 'Dizzy Rider',
-      agency: 'The Agency'
+      codeName: 'Sidewinter'
     }
   ];
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   public swapLayout() {
     this.layout = this.layout === 'rtl' ? 'ltr' : 'rtl';
   }
 
   public sortByName(): ISecretAgent[] {
-
     return this.agents.sort((a, b) => a.codeName.localeCompare(b.codeName));
   }
 }

@@ -1,12 +1,8 @@
 <section>
-    <div class="container">
-        <h1>Secret Agents</h1>
-        <button class="secondary" (click)="swapLayout()">
-             Swap Layout
-        </button>
-        <button class="secondary" (click)="sortByName()">
-             Sort By Name
-        </button>
-        <app-agent *ngFor="let agent of agents" [agent]="agent" [layout]="layout"></app-agent>
-    </div>
+  <div class="container">
+    <h1>Secret Agents</h1>
+    <button class="secondary" (click)="swapLayout()">Swap Layout</button>
+    <button class="secondary" (click)="sortByName()">Sort By Name</button>
+    <app-agent *ngFor="let agent of agents" [agent]="agent" [layout]="layout"></app-agent>
+  </div>
 </section>

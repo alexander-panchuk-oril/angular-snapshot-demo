@@ -14,9 +14,9 @@ Simple app with a list of secret agents and the ability to sort them.
 
 Run `npm run test:jest` to execute tests via [Jest](https://jestjs.io/) in a watch mode. 
 
-To update snapshots run `npm run test:jest--u` or press <kbd>U</kbd> in the watch mode. 
+To update snapshots run `npm run test:jest--updateSnapshot` or press <kbd>U</kbd> in the watch mode.
 
-To check code coverage run `npm run test:jest--c`.
+To check code coverage run `npm run test:jest--coverage`.
 
 
 ## ⚙️ Setup Angular testing with Jest
@@ -41,9 +41,15 @@ module.exports = {
     collectCoverageFrom: ['<rootDir>/src/**/*.(component|pipe|service|directive|resolver|guard|interceptor).ts']
 };
  ```
-3. In a root folder create file **jest.setup.ts** and add the import:
+3. In a root folder create file **jest.setup.ts** and add the following:
 ```typescript
+import 'zone.js';
+import 'zone.js/testing';
 import 'jest-preset-angular';
+import { TestBed } from "@angular/core/testing";
+import { BrowserDynamicTestingModule, platformBrowserDynamicTesting } from "@angular/platform-browser-dynamic/testing";
+
+TestBed.initTestEnvironment(BrowserDynamicTestingModule, platformBrowserDynamicTesting());
 ```
 4. In **tsconfig.spec.json** change `"jasmine"` to `"jest"` in `compilerOptions.types`
 ```json 
@@ -83,7 +89,7 @@ describe('AgentComponent', () => {
   let component: AgentComponent;
   let fixture: ComponentFixture<AgentComponent>;
 
-  beforeEach(async(() => {
+  beforeEach((() => {
     TestBed.configureTestingModule({
       declarations: [ AgentComponent ]
     })
@@ -114,7 +120,7 @@ To test object values:
 4. Run tests
 `npm run test:jest`
 
-5. To update snapshots run `npm run test:jest--u` or press <kbd>U</kbd> in the watch mode. 
+5. To update snapshots run `npm run test:jest--updateSnapshot` or press <kbd>U</kbd> in the watch mode. 
 
 ## 📢 Feedback 
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
